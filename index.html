@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Animations Event</title>
+        <style>
+
+            body{
+                display: flex;
+                /* align-items: center; */
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                color: #15202B;
+                font-family: Arial;
+                background: rgb(0, 0, 0);
+            }
+
+            
+            .boxImage {
+                width: 600px;
+                height: 600px;
+                /* border: 1px solid rgb(245, 14, 149); */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                position: relative;
+            }
+
+            img {
+                width: 550px;
+                height: 550px;
+                /* border: 1px solid rgb(29, 15, 224); */
+                position: absolute;
+            }
+
+            .eyeLeft {
+
+                border: 10px solid #211F20;
+                position: absolute;
+                width: 130px;
+                height: 140px;
+                left: 170px;
+                top: 120px;
+                border-radius: 70%;
+                background: white;
+                /* HOVER OFF */
+                -webkit-transition:all 5s ease;
+            }
+            .eyeRight {
+            
+                border: 10px solid #211F20;
+                position: absolute;
+                width: 130px;
+                height: 140px;
+                right: 130px;
+                top: 120px;
+                border-radius: 70%;
+                background: white;
+                /* HOVER OFF */
+                -webkit-transition:all 5s ease;
+
+            }
+
+            .retinaLeft {
+                animation-name: moveEyes;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-timing-function: ease-in-out;
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                left: 60px;
+                top: 40px;
+                border-radius: 70%;
+                background: black;
+
+            }
+
+            .retinaRight {
+                animation-name: moveEyes;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-timing-function: ease-in-out;
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                right: 60px;
+                top: 40px;
+                border-radius: 70%;
+                background: black;
+
+            }
+
+            .contrast {
+                
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                left: 12px;
+                top: 10px;
+                border-radius: 70%;
+                background: white;
+
+            }
+
+            .boxImage:hover .eyeRight{
+                -webkit-transition:all 5s ease;
+                background: red;
+                
+            }
+
+            .boxImage:hover .eyeLeft{
+
+                -webkit-transition:all 5s ease;
+                background: red;
+            }
+
+            
+            @keyframes moveEyes {
+                0% {
+                    /* opacity: 0; */
+                    left: 0;
+
+                }
+                50% {
+                    top: 50%;
+                }
+                100% {
+                    left: calc(100% - 60px);
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="boxImage" id="boxImage">
+            <img src="img/monstruo-cara-emociones.jpg" alt="">
+            <div class="eyeLeft">
+                <div class="retinaLeft" id="eyeLeft">
+                    <div class="contrast"></div>
+                </div>
+            </div>
+            <div class="eyeRight" id="eyeRight">
+                <div class="retinaRight">
+                    <div class="contrast"></div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
